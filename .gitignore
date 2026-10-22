@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.secret_salt
+results/raw/
+results/ledger.json
+.env

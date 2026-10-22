@@ -1,0 +1,19 @@
+{
+  "sha256": "2790d14515ed048f6daef9ad94b24228217dc5ed31fc776d7cc7fd2feddfd29e",
+  "files": [
+    "DESIGN.md",
+    "horizon/core.py",
+    "horizon/scoring.py",
+    "horizon/runner.py",
+    "horizon/client.py",
+    "horizon/axes/__init__.py",
+    "horizon/axes/coding.py",
+    "horizon/axes/icl_language.py",
+    "horizon/axes/long_context.py",
+    "horizon/axes/math_reasoning.py",
+    "horizon/axes/planning.py",
+    "horizon/axes/rule_induction.py",
+    "horizon/axes/world_model.py"
+  ],
+  "locked_on": "2026-10-21"
+}

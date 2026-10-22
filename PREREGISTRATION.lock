@@ -1,5 +1,5 @@
 {
-  "sha256": "2790d14515ed048f6daef9ad94b24228217dc5ed31fc776d7cc7fd2feddfd29e",
+  "sha256": "c7e9bee7451d5b1ed0863f6a1bae2025f6ef59d973a3c224bc5adf4361e06592",
   "files": [
     "DESIGN.md",
     "horizon/core.py",

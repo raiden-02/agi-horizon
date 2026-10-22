@@ -57,9 +57,9 @@ class Ledger:
 class Client:
     def __init__(self, backend: str, ledger: Ledger, pricing: dict):
         self.url, key_var = BACKENDS[backend]
-        self.key = os.environ.get(key_var)
+        self.key = os.environ.get(key_var) or _dotenv().get(key_var)
         if not self.key:
-            raise SystemExit(f"{key_var} is not set")
+            raise SystemExit(f"{key_var} is not set (environment or .env in the repo root)")
         self.backend, self.ledger, self.pricing = backend, ledger, pricing
 
     def chat(self, model: str, messages: list[dict]) -> Reply:
@@ -110,6 +110,14 @@ class Client:
             cost = pt * float(p.get("prompt", 0)) + ct * float(p.get("completion", 0))
         self.ledger.add(cost)
         return Reply(msg.get("content") or "", pt, ct, float(cost), latency_s=latency)
+
+
+def _dotenv() -> dict:
+    p = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".env")
+    if not os.path.exists(p):
+        return {}
+    pairs = (ln.split("=", 1) for ln in open(p, encoding="utf-8") if "=" in ln and not ln.startswith("#"))
+    return {k.strip(): v.strip().strip('"') for k, v in pairs}
 
 
 def load_pricing(path: str) -> dict:

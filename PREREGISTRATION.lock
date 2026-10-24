@@ -1,5 +1,5 @@
 {
-  "sha256": "c7e9bee7451d5b1ed0863f6a1bae2025f6ef59d973a3c224bc5adf4361e06592",
+  "sha256": "8535fc1b2a8e2959f8ea1f74b415e306d86f0a96595495b48e65c59edb9a87b4",
   "files": [
     "DESIGN.md",
     "horizon/core.py",
@@ -15,5 +15,5 @@
     "horizon/axes/rule_induction.py",
     "horizon/axes/world_model.py"
   ],
-  "locked_on": "2026-10-21"
+  "locked_on": "2026-10-24"
 }

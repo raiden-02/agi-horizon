@@ -58,7 +58,7 @@ class Client:
     def __init__(self, backend: str, ledger: Ledger, pricing: dict):
         self.url, key_var = BACKENDS[backend]
         self.key = os.environ.get(key_var) or _dotenv().get(key_var)
-        if not self.key:
+        if not self.key or self.key.startswith("REPLACE_WITH"):
             raise SystemExit(f"{key_var} is not set (environment or .env in the repo root)")
         self.backend, self.ledger, self.pricing = backend, ledger, pricing
 
